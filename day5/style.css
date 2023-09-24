@@ -1,0 +1,220 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,400);
+
+:root {
+    --red: #952323;
+    --blue: #0C356A;
+}
+.element {
+    background-color: var(--red);
+    color: var(--blue);
+}
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.3);
+    background: #CEDEBD;
+    font-family: 'Open-Sans',Helvetica, sans-serif;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+}
+
+.center {
+    position: absolute;
+    top: 90px;
+    left: 60px;
+    height: 220px;
+    width: 280px;
+    border-radius: 3px;
+    box-shadow: 10px 10px 15px 0 rgba(0,0,0,0.3);
+    color: #fff;
+    overflow: hidden;
+}
+
+.center .header {
+    position: relative;
+    height: 60px;
+    width: 100%;
+    background: #EE9322;
+    color: #fff;
+}
+.center .header .big {
+    position: absolute;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.center .header .small {
+    position: absolute;
+    font-weight: 580;
+    font-size: 11px;
+}
+.center .header .title {
+    top: 12px;
+    height: 14px;
+}
+.center .header .date {
+    top: 30px;
+    left: 15px;
+}
+.center .header .type {
+    top: 15px;
+    right: 15px;
+}
+.center .header .value {
+    top: 28px;
+    right: 15px; 
+}
+
+.center .parameters {
+    text-align: right;
+    padding: 10px 0 14px 0;
+}
+
+.center .parameters span {
+    position: relative;
+    font-size: 9px;
+    color: #606060;
+    line-height: 13px;
+    padding: 0 10px 0 25px;
+}
+
+.center.parameters span:before {
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    display: block;
+    content: '';
+    width: 11px;
+    height: 3px;
+    border-radius: 3px;
+}
+
+.center .parameters .red:before {
+    background: var(--red);
+}
+
+.center .parameters .blue:before {
+    background: var(--blue);
+}
+
+.center .statistics {
+    position: relative;
+    height: 81px;
+    width: 260px;
+    margin: 0 auto;
+}
+
+.center .statistics .Line1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #F2F2F2;
+}
+.center .statistics .Line2 {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #F2F2F2;
+}
+
+.center .statistics .Line3 {
+    position:inherit;
+    top: 80px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #F2F2F2;
+}
+.center .statistics .data svg {
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.center .statistics .data polyline {
+    fill:none;
+    stroke-width: 3;
+    stroke-linecap:round
+}
+.center .statistics .data.red polyline {
+    stroke: var(--red);
+}
+.center .statistics .data.blue polyline {
+    stroke: var(--blue);
+}
+.center .statistics .data .tooltip {
+    position: absolute;
+    bottom: 13px;
+    left: 50%;
+    transform: translate3d(-50%, 10px ,0);
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 11px;
+    color: #fff;
+    padding: 8px 6px;
+    border-radius: 3px;
+    visibility: hidden;
+    opacity: 0;
+    transition: transform 0.4s ease-out 0s, opacity 0.4s ease-out 0s;
+
+}
+
+.center .statistics .data .tooltip:after {
+    position: absolute;
+    display: block;
+    content: '';
+    height: 6px;
+    width: 6px;
+    left: 50%;
+    margin-top: -3px;
+    bottom: -3px;
+    transform: rotate(45deg);
+}
+
+.center .statistics .data [class^="point-"] {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    cursor:  pointer;
+    z-index: 10;
+}
+
+.center .statistics .data [class^="point-"]:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    transform: translate3d(-50%, 0 ,0);
+}
+.center .statistics .data.red [class^="point-"] .tooltip:after {
+    background: var(--red);
+}
+.center .statistics .data.blue [class^="point-"] .tooltip:after{
+    background: var(--blue);
+}
+.center .days {
+    width: 280px;
+    margin: 0;
+}
+  
+.center .days .day {
+    position:relative;
+    margin-right: 21px;
+    float: left;
+    width: (100% / 7);
+    font-size: 9px;
+    color: #949494;
+    line-height: 200px;
+    text-transform: uppercase;
+    text-align: center;
+}
