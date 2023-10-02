@@ -1,0 +1,134 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,400);
+
+.frame {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 400px;
+	width: 400px;
+	margin-top: -200px;
+	margin-left: -200px;
+	border-radius: 8px;
+	background-color: #00092C;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+    color: #850000;
+    font-size: 15px;
+}
+
+.circle {
+	position: relative;
+	width: 210px;
+	height: 210px;
+	border-radius: 50%;
+	background: #E6DDC4;
+	background-color: #E6DDC4;
+	border: 7px solid #E6DDC4;
+	text-align: center;
+}
+.date {
+	position: absolute;
+	top: 65px;
+	width: 100%;
+}
+
+.time {
+	position: absolute;
+	top: 80px;
+	width: 100%;
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 100%;
+	margin: 4px 0;
+}
+
+.time span {
+	animation: infinite-opacity 1s ease-in-out infinite;
+}
+.heart {
+	position: absolute;
+	top: 129px;
+	left: 50px;
+}
+
+.heart span {
+	color: #850000;
+	font-size: 10px;
+	float: left;
+	margin-top: 1px;
+	margin-right: 4px;
+	animation: beat 1s ease-in-out infinite;
+}
+.energy {
+	position: absolute;
+	top: 129px;
+	right: 50px;
+}
+
+.spinner {
+	position: absolute;
+	width: 202px;
+	height: 202px;
+	border-radius: 50%;
+	top: 5px;
+	left: 5px;
+}
+.spinner circle {
+	stroke:#850000;
+	stroke-width: 3;
+	fill: none;
+	stroke-dasharray: 625;
+	animation: spinner 8s linear infinite;
+	transform-origin: center center;
+	transform: rotate(-90deg);
+}
+.dotted-circle {
+	position: absolute;
+	top: 14px;
+	left: 14px;
+	width: 180px;
+	height: 180px;
+	border: 2px dotted #DC0000;
+	border-radius: 50%;
+}
+
+@keyframes beat {
+	0% {
+		transform: scale(1);
+	}
+	35% {
+		transform: scale(1.2);
+	}
+}
+
+@keyframes infinite-opacity {
+    0% {
+      opacity: 0; /* Start with fully transparent */
+    }
+    50% {
+      opacity: 1; /* Midpoint of the animation, fully opaque */
+    }
+    100% {
+      opacity: 0; /* End with fully transparent */
+    }
+  }
+
+  @keyframes spinner {
+	from {
+		stroke-dashoffset: 625;
+		transform: rotate(-90deg) scaleY(1);
+	}
+	50% {
+		stroke-dashoffset: 0;
+		transform: rotate(-90deg) scaleY(1);
+	}
+	50.001% {
+		transform: rotate(-90deg) scaleY(-1);
+	}
+	to {
+		stroke-dashoffset: 625;
+		transform: rotate(-90deg) scaleY(-1);
+	}
+}
