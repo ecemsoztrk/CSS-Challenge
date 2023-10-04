@@ -1,0 +1,126 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,400,300,300italic);
+.frame {
+	position: absolute;
+	top:50%;
+	left: 50%;
+	width: 400px;
+	height: 400px;
+	margin-top: -200px;
+	margin-left: -200px;
+	border-radius: 2px;
+	box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.3);
+	background: linear-gradient(#F8F0E5, #EADBC8);
+	color: #562B08;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.quote {
+	position: relative;
+	margin-top: 90px;
+	padding: 0 30px;
+}
+.quote:before {
+	display: block;
+	position: absolute;
+	z-index: 0;
+	content: '„';
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-size: 250px;
+	color: #472d2d58;
+	line-height: 35px;
+	top: -100px;
+	left: 7px;
+}
+.quote p {
+	position: relative;
+	z-index: 1;
+	font-size: 24px;
+	line-height: 35px;
+	margin: 20px 0;
+}
+.quote .author {
+	font-weight: 300;
+	font-style: italic;
+	font-size: 20px;
+	line-height: 28px;
+}
+
+.tooltip {
+	position: relative;
+	display: inline-block;
+	background: #BF9270;
+	padding: 0 8px 5px 8px;
+	margin: -10px 0;
+	cursor: pointer;
+}
+.tooltip:hover .info {
+	visibility: visible;
+	opacity: 1;
+	transform: translate3d(0,0,0);
+}
+.tooltip:focus .info {
+	visibility: visible;
+	opacity: 1;
+	transform: translate3d(0,0,0);
+}
+.tooltip .info {
+	box-sizing: border-box;
+	position: absolute;
+	bottom: 54px;
+	left: -85px;
+	display: block;
+	background: #BF9270;
+	width: 300px;
+	font-size: 20px;
+	line-height: 24px;
+	cursor: text;
+	visibility: hidden;
+	opacity: 0;
+	transform: translate3d(0, -20px, 0);
+	transition: all .5s ease-out;
+}
+
+.tooltip .info::before {
+	position: absolute;
+	content: '';
+	width: 100%;
+	height: 14px;
+	bottom: -14px;
+	left: 0;
+}
+
+.tooltip .info::after {
+	position: absolute;
+	content: '';
+	width: 10px;
+	height: 10px;
+	transform: rotate(45deg);
+	bottom: -5px;
+	left:50%;
+	margin-left: -5px;
+	background: #BF9270;
+}
+
+.tooltip .info .pronounce {
+	display: block;
+	background: #fff;
+	color: #472D2D;
+	padding: 8px 17px 10px 17px;
+	line-height: 16px;
+}
+
+.tooltip .info .pronounce .fa {
+	position: relative;
+	margin-left: 10px;
+	top: 1px;
+	cursor: pointer;
+	transition: all .2s ease-out;
+}
+.tooltip .info .pronounce .fa:hover{
+	transform: scale(1.15) translate3d(0,0,0);
+	backface-visibility: none;
+}
+
+.tooltip .info .text {
+    display: block;
+    padding: 13px 17px;
+}
