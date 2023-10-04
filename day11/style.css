@@ -1,0 +1,119 @@
+.frame {
+	display: flex;
+	flex-direction: column;
+	justify-content: top;
+	align-items: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 400px;
+	height: 400px;
+	margin-top: -200px;
+	margin-left: -200px;
+	border-radius: 4px;
+	background: radial-gradient(ellipse at center,  rgb(0, 0, 0) 0%,rgb(0, 0, 0) 100%);
+}
+.sky {
+	position: relative;
+	width: 100%;
+	height: 60%;
+	animation: fade-in 2s ease-in-out;
+}
+.ground {
+	position: absolute;
+	top: 245px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: conic-gradient(
+		rgb(185, 123, 123) 0.25turn,
+		rgb(154, 26, 26) 0.25turn 0.5turn,
+		rgba(148, 8, 8, 0.708) 0.5turn 0.75turn,
+		rgb(108, 35, 35) 0.75turn
+		)
+		top left / 25% 25% repeat;
+	animation: road-past 1s 0.8s ease-in-out infinite;
+}
+.first-leg {
+	position: absolute;
+	top: 0px;
+	left:140px;
+	width: 150px;
+	height: 250px;
+	background-color: rgba(0, 0, 0, 0);
+    animation: leg-swing 2s ease-in-out infinite;
+    transform-origin: 50% 0;
+}
+.second-leg {
+	position: absolute;
+	top: 0;
+	left: 140px;
+	width: 150px;
+	height: 250px;
+	width: 150px;
+    height: 245px;
+    background-color: rgba(0, 0, 0, 0);
+    animation: leg-swing 2s ease-in-out 1s infinite;
+    transform-origin: 50% 0;
+}
+
+.first-foot {
+	position: absolute;
+	width: 150px;
+	height: 130px;
+	left: 0;
+	bottom: 0px;
+	background: url('https://100dayscss.com/codepen/doc-martens.svg') center center no-repeat;
+    animation: foot-lift 2s ease-in-out infinite;
+}
+.second-foot {
+	position: absolute;
+	width: 130px;
+	height: 130px;
+	left: 0;
+	bottom: 0;
+	background: url('https://100dayscss.com/codepen/doc-martens.svg') center center no-repeat;
+    animation: foot-lift 2s ease-in-out 1s infinite;
+}
+@keyframes road-past {
+	from {
+		background-position-x: 0%;
+	}
+	to {
+		background-position-x: -100%;
+	}
+}
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes foot-lift {
+	0%, 100% {
+		transform: rotate(-10deg) translateY(-5px) translateX(10px);
+	}
+	25% {
+		transform: rotate(0deg) translateY(0px) translateX(0);
+	}
+	50% {
+		transform: rotate(10deg) translateY(5px) translateX(10px);
+	}
+	75% {
+		transform: rotate(0deg) translateY(-30px) translateY(0);
+	}
+}
+@keyframes leg-swing {
+	0%, 100% {
+		transform: rotate(-22deg);
+	}
+	50% {
+		transform: rotate(40deg);
+	}
+}
