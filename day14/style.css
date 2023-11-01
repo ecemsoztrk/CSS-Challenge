@@ -1,0 +1,116 @@
+.frame {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 400px;
+	height: 400px;
+	margin-top: -200px;
+	margin-left: -200px;
+	border-radius: 15px;
+	box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	background:#8EACCD;
+	color: #fff;
+}
+
+.center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.card {
+	-webkit-perspective: 1000px;
+	perspective: 1000px;
+	height: 180px;
+	width: 300px;
+}
+.card-face {
+	height: 100%;
+	transform-style:preserve-3d;
+	transition: transform 600ms ease-in;
+	transform: rotateX(0) translateZ(0);
+}
+
+.bike,
+.plane {
+	background-color: #FFF2D8;
+	border-radius: 4px;
+	box-shadow: 8px 8px 32px rgba(0, 0, 0, 0.5);
+	text-align: center;
+	backface-visibility: hidden;
+	overflow: hidden;
+
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.plane {
+	transform: rotateX(180deg);
+}
+
+.card:hover .card-face {
+	transform: rotateX(180deg);
+}
+
+.bike img {
+	transform-origin: bottom center;
+	animation: bike-bounce 300ms ease-in infinite alternate;
+}
+
+@keyframes bike-bounce {
+	to {
+		transform: scaleY(0.95);
+	}
+}
+
+.plane img {
+	animation: heli-movement 1s ease infinite alternate;
+}
+
+@keyframes heli-movement {
+	50% {
+		transform: translateY(5px);
+	}
+	0%,
+	100% {
+		transform: translateY(-5px);
+	}
+}
+.dash {
+	background-color: #4a4841;
+	height: 3px;
+	border-radius: 4px;
+	position: absolute;
+	animation: scene-movement linear infinite;
+}
+.ground, 
+.sky {
+	position: absolute;
+	overflow: hidden;
+	height: 115px;
+}
+.ground {
+	width: 180px;
+	top: 125px;
+	right: 50px;
+}
+
+.sky {
+	width: 200px;
+	top: 30px;
+	left: 70px;
+}
+.sky .dash {
+	z-index: -1;
+}
+
+@keyframes scene-movement {
+	to {
+		transform: translateX(-180px);
+	}
+}
