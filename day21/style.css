@@ -1,0 +1,77 @@
+.frame {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 400px;
+	height: 400px;
+	margin-top: -200px;
+	margin-left: -200px;
+	box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.3);
+	border-radius: 2px;
+	overflow: hidden;
+	background: linear-gradient(to top right,  #0d3043 0%,  #23daff 100%);
+}
+
+.pacman {
+	position: absolute;
+	top: 150px;
+	left: 150px;
+	width: 150px;
+	height: 150px;
+	stroke: #ffe4c3;
+	fill: none;
+	stroke-width: 50px;
+	stroke-dasharray: 200;
+	animation: pac-mouth 1s ease-in infinite;
+}
+
+@keyframes pac-mouth {
+	0%,
+	100% {
+		stroke-dashoffset: 0;
+		transform: rotate(0deg);
+	}
+	50% {
+		stroke-dashoffset: 65;
+		transform: rotate(10deg);
+	}
+}
+
+.pac-eye {
+	position: absolute;
+	top: 170px;
+	left: 210px;
+	height: 20px;
+	width: 20px;
+	fill: #1c4681;;
+	animation: pac-eyes 1s ease-in-out;
+}
+
+@keyframes pac-eyes {
+	0%,
+	100% {
+		transform: translate(0) scaleX(1);
+	}
+	50% {
+		transform: translate(-2px) scaleX(1.05);
+	}
+}
+
+.pac-dots {
+	position: absolute;
+	top: 190px;
+	left: 230px;
+	stroke: #ffe4c3;
+	width: 200px;
+	height: 16px;
+	stroke-width: 12px;
+	stroke-linecap: round;
+	stroke-dasharray: 0px 50px;
+	animation: pac-dot 1s ease-in-out infinite;
+}
+
+@keyframes pac-dot {
+	100% {
+		stroke-dashoffset: 70;
+	}
+}
